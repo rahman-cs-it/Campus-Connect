@@ -15,7 +15,7 @@ const Attendance = () => {
   const [search,setSearch] = useState("")
   const [query,setQuery] = useState("")
   const getFacultyAttendence = () => {
-     axios.get(`http://localhost:5000/api/att/getfacatt/${user._id}`)
+     axios.get(`https://campus-connect-92u9.onrender.com/api/att/getfacatt/${user._id}`)
      .then(res => {
       console.log(res.data)
       setData(res.data.facAtt)

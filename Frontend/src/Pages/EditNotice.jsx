@@ -82,7 +82,7 @@ const EditNotice = () => {
 
     const postData = () => {
         console.log(file, content, classes, branch)
-        axios.post("http://localhost:5000/api/notice/createnotice",{
+        axios.post("https://campus-connect-92u9.onrender.com/api/notice/createnotice",{
             file,
             content,
             class:classes,
@@ -109,7 +109,7 @@ const EditNotice = () => {
     }
 
     const getNotice = () => {
-        axios.get( `http://localhost:5000/api/notice/getnoticebyid/${id}`)
+        axios.get( `https://campus-connect-92u9.onrender.com/api/notice/getnoticebyid/${id}`)
         .then(res => {
             console.log("Notice :",res.data)
             setNoticeInfo(res.data.notice)
@@ -120,7 +120,7 @@ const EditNotice = () => {
 
 const updateData = () => {
     const {content,branch,classes} = noticeInfo
-    axios.put(`http://localhost:5000/api/notice/updatenotice/${id}`,{
+    axios.put(`https://campus-connect-92u9.onrender.com/api/notice/updatenotice/${id}`,{
         content,
         branch,
         classes,

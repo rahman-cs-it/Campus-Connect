@@ -150,7 +150,7 @@ const Form1 = () => {
   const handleSubmitt = () => {
     if(values.firstName && values.lastName && values.branch &&values.adYear && values.gradYear && values.mobileNo && values.address && values.state && values.city && values.district && values.pincode && values.ttFees &&  values.feesPaid &&  values.feesPaid && values.oldEmail  ){
       axios
-        .post("http://localhost:5000/api/stu/admission", {
+        .post("https://campus-connect-92u9.onrender.com/api/stu/admission", {
           firstName: values.firstName,
           lastName: values.lastName,
           branch: values.branch,

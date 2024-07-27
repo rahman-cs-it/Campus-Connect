@@ -249,7 +249,7 @@ const CheckFees = () => {
   const fetchStu = () => {
     axios
       .get(
-        `http://localhost:5000/api/att/getstu/${branch}/${classes}/${sem}/${endYear}`
+        `https://campus-connect-92u9.onrender.com/api/att/getstu/${branch}/${classes}/${sem}/${endYear}`
       )
       .then((res) => {
         // Sort By Roll No
@@ -270,7 +270,7 @@ const CheckFees = () => {
   const calcOverAllPercentage = () => {
     console.log(sub.subjects);
     axios
-      .post("http://localhost:5000/api/att/calperc", {
+      .post("https://campus-connect-92u9.onrender.com/api/att/calperc", {
         subjects: sub.subjects,
         batch: endYear,
       })
@@ -288,7 +288,7 @@ const CheckFees = () => {
     updatedLoadingList[i] = true;
     setLoadingList(updatedLoadingList);
     axios
-      .post("http://localhost:5000/api/stu/sendmail", {
+      .post("https://campus-connect-92u9.onrender.com/api/stu/sendmail", {
         email,
         feesPaid,
         totalFees,

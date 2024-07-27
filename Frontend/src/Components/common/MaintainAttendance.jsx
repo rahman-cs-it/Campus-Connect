@@ -41,7 +41,7 @@ const MaintainAttendance = ({branch,classes,subject,sem,studentId,facultyId}) =>
 
   // Get Student Attendence Percentage
   //   const getAttendence = () => {
-  //     axios.get(`http://localhost:5000/api/att/getatt/${subject}/${studentId}/${facultyId}`)
+  //     axios.get(`https://campus-connect-92u9.onrender.com/api/att/getatt/${subject}/${studentId}/${facultyId}`)
   //     .then(res => {
   //      console.log(res.data)
   //      setAttendancePercentage(res.data.calcPercentage)

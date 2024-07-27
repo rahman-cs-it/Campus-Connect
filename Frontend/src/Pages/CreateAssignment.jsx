@@ -199,7 +199,7 @@ const engineeringSubjects = [
 
 
   const postAssignment = () => {
-    axios.post("http://localhost:5000/api/ass/assignment",{
+    axios.post("https://campus-connect-92u9.onrender.com/api/ass/assignment",{
       faculty:user._id,
       subject,
       content:title,

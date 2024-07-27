@@ -35,7 +35,7 @@ const NoticeCard = () => {
   const {user} = useContext(AppContext)
 
   const getNotice = () => {
-    axios.get(`http://localhost:5000/api/notice/getfacnotice/${user.dept}`)
+    axios.get(`https://campus-connect-92u9.onrender.com/api/notice/getfacnotice/${user.dept}`)
     .then(res => {
       console.log(res.data)
       setNotices(res.data.notice)
@@ -47,7 +47,7 @@ const NoticeCard = () => {
 
   // Get Notice in student side
   const getStuNotice = () => {
-    axios.get(`http://localhost:5000/api/notice/getnotice/${user.branch}/${user.stu_class}`)
+    axios.get(`https://campus-connect-92u9.onrender.com/api/notice/getnotice/${user.branch}/${user.stu_class}`)
     .then(res => {
       console.log("Student NOtice",res.data.notice)
       setNotices(res.data.notice)
@@ -64,7 +64,7 @@ const NoticeCard = () => {
   },[]);
 
   const deleteNotice = (id) => {
-    axios.delete(`http://localhost:5000/api/notice/deletenotice/${id}`)
+    axios.delete(`https://campus-connect-92u9.onrender.com/api/notice/deletenotice/${id}`)
     .then(res => {
       console.log(res.data)
     }).catch(err => {
@@ -77,7 +77,7 @@ const NoticeCard = () => {
   }
 
   const getSingleNotice = (id) => {
-     axios.get(`http://localhost:5000/api/notice/getnoticebyid/${id}`)
+     axios.get(`https://campus-connect-92u9.onrender.com/api/notice/getnoticebyid/${id}`)
      .then(res => {
       console.log(res.data);
       setSingleNotice(res.data.notice)

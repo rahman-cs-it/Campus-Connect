@@ -64,7 +64,7 @@ const DisplayData = () => {
 
   const getData = () => {
     console.log(branch,stu_class,rollNo)
-    axios.post("http://localhost:5000/api/stu/search",{
+    axios.post("https://campus-connect-92u9.onrender.com/api/stu/search",{
      branch,
      stu_class,
      rollNo,

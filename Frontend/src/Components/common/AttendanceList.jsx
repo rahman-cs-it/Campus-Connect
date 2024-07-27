@@ -61,7 +61,7 @@ const AttendanceList = ({date,subject,present,branch,sem,classes,data,batch}) =>
   ];
 
   const fetchStu = () => {
-    axios.get(`http://localhost:5000/api/att/getstu/${branch}/${classes}/${sem}/${batch}`)
+    axios.get(`https://campus-connect-92u9.onrender.com/api/att/getstu/${branch}/${classes}/${sem}/${batch}`)
     .then(res => {
       // Sort By Roll No
       res.data.students.sort((a, b) => a.rollNo - b.rollNo);

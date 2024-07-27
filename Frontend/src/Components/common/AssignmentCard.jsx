@@ -167,7 +167,7 @@ const AssignmentCard = ({
 
    // Upload Assignment From Student Side
   const uploadAssigment = () => {
-    axios.post("http://localhost:5000/api/ass/checkass",{
+    axios.post("https://campus-connect-92u9.onrender.com/api/ass/checkass",{
       studentId:user._id,
       assignmentId:id,
       file
@@ -189,7 +189,7 @@ const AssignmentCard = ({
 
   const reUploadAssigment = () => {
     console.log("reUploadAssigment triggered")
-    axios.put(`http://localhost:5000/api/ass/updatefile/${userAssignment._id}`,{
+    axios.put(`https://campus-connect-92u9.onrender.com/api/ass/updatefile/${userAssignment._id}`,{
      file: updatedFile
     }).then(res => {
       console.log(res.data)
@@ -222,7 +222,7 @@ const AssignmentCard = ({
 
 
   const getUploadedAss = () => {
-    axios.get(`http://localhost:5000/api/ass/completedass/${id}/${user._id}`).then(res => {
+    axios.get(`https://campus-connect-92u9.onrender.com/api/ass/completedass/${id}/${user._id}`).then(res => {
       setUserFile(res.data.ass[0].file)
     }).catch(err => {
       console.log(err)
@@ -232,7 +232,7 @@ const AssignmentCard = ({
   // Find student Assignment Upload Count and student data
   const getCount = () => {
     setResLoading(true)
-    axios.get(`http://localhost:5000/api/ass/findresponse/${id}`)
+    axios.get(`https://campus-connect-92u9.onrender.com/api/ass/findresponse/${id}`)
     .then(res => {
     
        setStudent(res.data.resp)
@@ -244,7 +244,7 @@ const AssignmentCard = ({
 
   // Send Comment to the Student By Faculty
   const SendComment = (id) => {
-     axios.put("http://localhost:5000/api/ass/updatecomment",{
+     axios.put("https://campus-connect-92u9.onrender.com/api/ass/updatecomment",{
       id,
       comment
      }).then(res => {
@@ -261,7 +261,7 @@ const AssignmentCard = ({
 // Get Assignment based on assignmentId and StudentId
   const getUserAssignment = () => {
     console.log("AssignmentId",id)
-    axios.get(`http://localhost:5000/api/ass/getuserass/${user._id}/${id}`,{
+    axios.get(`https://campus-connect-92u9.onrender.com/api/ass/getuserass/${user._id}/${id}`,{
       studentId:user._id,
       assignmentId:id
     })
@@ -283,7 +283,7 @@ const AssignmentCard = ({
 
   const deleteAss = (id) => {
     console.log(id)
-    axios.delete(`http://localhost:5000/api/ass/deleteass/${id}`)
+    axios.delete(`https://campus-connect-92u9.onrender.com/api/ass/deleteass/${id}`)
     .then(res => console.log(res.data))
     .catch(err => console.log(err));
   }

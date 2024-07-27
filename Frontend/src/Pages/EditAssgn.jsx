@@ -218,7 +218,7 @@ const engineeringSubjects = [
 
 
   const postAssignment = () => {
-    axios.post("http://localhost:5000/api/ass/assignment",{
+    axios.post("https://campus-connect-92u9.onrender.com/api/ass/assignment",{
       faculty:user._id,
       subject,
       content:title,
@@ -255,7 +255,7 @@ const engineeringSubjects = [
   };
 
   const getData = () => {
-    axios.get( `http://localhost:5000/api/ass/getassbyid/${id}`)
+    axios.get( `https://campus-connect-92u9.onrender.com/api/ass/getassbyid/${id}`)
     .then(res => {
         console.log("Assgnmnt :",res.data)
         setAssgnmnt(res.data.ass)
@@ -270,7 +270,7 @@ const engineeringSubjects = [
 
 const updateAss = () => {
     const {branch,sem,subject,content,createdAt,lastDate} = assgnmnt
-    axios.put(`http://localhost:5000/api/ass/updateass/${id}`,{
+    axios.put(`https://campus-connect-92u9.onrender.com/api/ass/updateass/${id}`,{
        branch,
        sem,
        subject,

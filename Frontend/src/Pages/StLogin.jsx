@@ -41,7 +41,7 @@ const StLogin = () => {
       }, 2000);
     }
     axios
-      .post("http://localhost:5000/api/stu/login", {
+      .post("https://campus-connect-92u9.onrender.com/api/stu/login", {
         oldEmail:email,
         password,
       })

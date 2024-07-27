@@ -244,7 +244,7 @@ const CheckAttendence = () => {
   const fetchStu = () => {
     axios
       .get(
-        `http://localhost:5000/api/att/getstu/${branch}/${classes}/${sem}/${endYear}`
+        `https://campus-connect-92u9.onrender.com/api/att/getstu/${branch}/${classes}/${sem}/${endYear}`
       )
       .then((res) => {
         // Sort By Roll No
@@ -265,7 +265,7 @@ const CheckAttendence = () => {
   const calcOverAllPercentage = () => {
     console.log(sub.subjects);
     axios
-      .post("http://localhost:5000/api/att/calperc", {
+      .post("https://campus-connect-92u9.onrender.com/api/att/calperc", {
         subjects: sub.subjects,
         batch: endYear,
         branch,
@@ -282,7 +282,7 @@ const CheckAttendence = () => {
   const sendMail = (email, attendence) => {
     console.log(email);
     axios
-      .post("http://localhost:5000/api/att/sendmail", {
+      .post("https://campus-connect-92u9.onrender.com/api/att/sendmail", {
         email,
         attendence,
       })

@@ -134,7 +134,7 @@ const CreateAttendance = () => {
   //  Find All Students Based on branch,class and sem
   const fetchStu = () => {
     setLoading(true)
-    axios.get(`http://localhost:5000/api/att/getstu/${branch}/${classes}/${sem}/${endYear}`)
+    axios.get(`https://campus-connect-92u9.onrender.com/api/att/getstu/${branch}/${classes}/${sem}/${endYear}`)
     .then(res => {
       // Sort By Roll No
       res.data.students.sort((a, b) => a.rollNo - b.rollNo);
@@ -153,7 +153,7 @@ const CreateAttendance = () => {
   // },[subject])
 
    const markAttendence = () => {
-      axios.post("http://localhost:5000/api/att/createatt",{
+      axios.post("https://campus-connect-92u9.onrender.com/api/att/createatt",{
          studentId:presentStudent,
          facultyId:user._id,
          subject,
@@ -179,7 +179,7 @@ const CreateAttendance = () => {
   //  let arr = [];
   //  const getAttPercentage = () => {
   //  students.forEach(item => {
-  //     axios.get(`http://localhost:5000/api/att/getatt/${item._id}/${subject}`)
+  //     axios.get(`https://campus-connect-92u9.onrender.com/api/att/getatt/${item._id}/${subject}`)
   //     .then(res => {
   //       console.log("res ",res.data)
   //       setPercentage(res.data)
@@ -192,7 +192,7 @@ const CreateAttendance = () => {
 
   const getAttPercentage = () => {
     const promises = students.map( (item) => {
-      return axios.get(`http://localhost:5000/api/att/getatt/${item._id}/${subject}`)
+      return axios.get(`https://campus-connect-92u9.onrender.com/api/att/getatt/${item._id}/${subject}`)
         .then(res => res.data.calcPercentage)
         .catch(err => {
           console.log(err);

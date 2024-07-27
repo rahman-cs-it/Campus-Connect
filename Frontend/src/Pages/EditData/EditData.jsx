@@ -37,7 +37,7 @@ export default function EditData() {
   }
   const fetchData = () => {
     console.log(user)
-    axios.get(`http://localhost:5000/api/stu/getstudent/${id}`)
+    axios.get(`https://campus-connect-92u9.onrender.com/api/stu/getstudent/${id}`)
     .then(res => {
       console.log(res.data)
       setUser(res.data.student)
@@ -51,7 +51,7 @@ export default function EditData() {
   },[])
 
   const updateStudent = () => {
-    axios.put(`http://localhost:5000/api/stu/update/${id}`,{
+    axios.put(`https://campus-connect-92u9.onrender.com/api/stu/update/${id}`,{
       ...user
     })
     .then(res => {

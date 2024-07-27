@@ -70,7 +70,7 @@ const CreateNotice = () => {
 
     const postData = () => {
         console.log(file, content, classes, branch)
-        axios.post("http://localhost:5000/api/notice/createnotice",{
+        axios.post("https://campus-connect-92u9.onrender.com/api/notice/createnotice",{
             file,
             content,
             classes,

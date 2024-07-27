@@ -201,7 +201,7 @@ const Assigments = () => {
 
 
   const getAssignments = () => {
-    axios.get(`http://localhost:5000/api/ass/getass/${user.branch}/${user.currentSem}`).then(res => {
+    axios.get(`https://campus-connect-92u9.onrender.com/api/ass/getass/${user.branch}/${user.currentSem}`).then(res => {
       console.log(res.data)
       setData(res.data.data)
       setLoading(false)
@@ -211,7 +211,7 @@ const Assigments = () => {
   }
 
   const getFacultyAss = () => {
-    axios.get(`http://localhost:5000/api/ass/getassbybranch/${user?._id}`).then(res => {
+    axios.get(`https://campus-connect-92u9.onrender.com/api/ass/getassbybranch/${user?._id}`).then(res => {
       console.log("getFacultyAss :",res.data)
       setFacData(res.data.ass)
       setLoading(false)
