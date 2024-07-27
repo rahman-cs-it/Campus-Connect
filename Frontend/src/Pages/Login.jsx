@@ -30,7 +30,7 @@ const Login = () => {
       return 
     }
     e.preventDefault()
-     axios.post("http://localhost:5000/api/fac/login",{
+     axios.post("https://campus-connect-92u9.onrender.com/api/fac/login",{
       email,
       password
      }).then(res => {
