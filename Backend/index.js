@@ -1,18 +1,18 @@
-import express, { json } from 'express';
-import { config } from "dotenv";
-import cors from "cors";
-config();
+const express = require('express');
+const dotenv = require("dotenv");
+const cors = require("cors")
+dotenv.config();
 const app = express();
-app.use(json());
+app.use(express.json());
 app.use(cors());
-import { json as _json } from 'body-parser';
-app.use(_json())
+const bodyParser=require('body-parser');
+app.use(bodyParser.json())
 
 
 const PORT = process.env.PORT
 const URI = process.env.URI
 // Connection
-import { connection } from "./Config/Conn";
+const {connection} = require("./Config/Conn")
 connection(URI)    // function call
 
 app.listen(PORT ,() => {
@@ -20,18 +20,18 @@ app.listen(PORT ,() => {
 });
 
 // Importing Routes
-import facultyRoute from "./Routes/FacultyRegistrationRoutes";
+const facultyRoute = require("./Routes/FacultyRegistrationRoutes");
 app.use("/api/fac",facultyRoute)
 
-import AdmissionRoute from "./Routes/AdmissionRoutes";
+const AdmissionRoute = require("./Routes/AdmissionRoutes");
 app.use("/api/stu",AdmissionRoute)
 
-import AssignmentRoute from "./Routes/AssignmentRoutes";
+const AssignmentRoute= require("./Routes/AssignmentRoutes");
 app.use("/api/ass",AssignmentRoute)
 
-import NoticeRoute from "./Routes/NoticeRoute";
+const NoticeRoute= require("./Routes/NoticeRoute");
 app.use("/api/notice",NoticeRoute)
 
-import attendenceRoute from "./Routes/AttendenceRoute";
+const attendenceRoute= require("./Routes/AttendenceRoute");
 app.use("/api/att",attendenceRoute)
 
